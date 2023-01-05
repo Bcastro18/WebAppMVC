@@ -11,10 +11,10 @@ namespace WebAppMVC.Controllers
     {       
         private readonly IFilmeServiceInterface service;
 
-       /* public ProductsAPIController(IFilmeServiceInterface service)
+       public ProductsAPIController(IFilmeServiceInterface service)
         {
             this.service = service;
-        }*/
+        }
 
         [Microsoft.AspNetCore.Mvc.HttpGet]
         public IActionResult Get()
