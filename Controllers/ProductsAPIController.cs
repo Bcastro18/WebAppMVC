@@ -6,7 +6,7 @@ using WebAppMVC.Models;
 
 namespace WebAppMVC.Controllers
 {
-    [Microsoft.AspNetCore.Mvc.Route("api/[controller]")]
+    [Microsoft.AspNetCore.Mvc.Route("api/movies")]
     [ApiController]
     public class ProductsAPIController : ControllerBase
     {
@@ -17,12 +17,12 @@ namespace WebAppMVC.Controllers
             new Movie { Id = 3, Name = "Transformers 789", Cat = "Ação", Price = 14.90M }
         };
 
-
+        [Microsoft.AspNetCore.Mvc.HttpGet()]
         public IEnumerable<Movie> GetAllMovies()
         {
             return movies;
         }
-
+        [Microsoft.AspNetCore.Mvc.HttpGet("{id}")]
         public Movie GetMovieById(int id)
         {
             var movie = movies.FirstOrDefault((p) => p.Id == id);
@@ -34,7 +34,7 @@ namespace WebAppMVC.Controllers
             return movie;
         }
 
-
+        [Microsoft.AspNetCore.Mvc.HttpGet("{cat}")]
         public IEnumerable<Movie> GetMovieByCat(string cat)
         {
             return movies.Where((p) => string.Equals(p.Cat, cat, StringComparison.OrdinalIgnoreCase));
