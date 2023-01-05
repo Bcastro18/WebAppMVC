@@ -5,10 +5,10 @@ using WebAppMVC.Service;
 
 namespace WebAppMVC.Controllers
 {
-    [Microsoft.AspNetCore.Mvc.Route("api/movies")]
+    [Microsoft.AspNetCore.Mvc.Route("movies")]
     [ApiController]
     public class ProductsAPIController : ControllerBase
-    {   
+    {       
         private readonly IFilmeServiceInterface service;
 
        /* public ProductsAPIController(IFilmeServiceInterface service)
